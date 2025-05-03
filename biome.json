@@ -10,7 +10,8 @@
     "ignore": [
       "tsconfig.app.json",
       "tsconfig.node.json",
-      "tsconfig.json"
+      "tsconfig.json",
+      "src/routeTree.gen.ts"
     ]
   },
   "formatter": {
