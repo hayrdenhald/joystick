@@ -1,12 +1,16 @@
 import { Link, Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { Route as aboutRoute } from "./about.tsx";
+import { Route as ticTacToeRoute } from "./games/tic-tac-toe/index.tsx";
+import { Route as indexRoute } from "./index.tsx";
 
 export const Route = createRootRoute({
   component: () => (
     <>
       <div>
-        <Link to="/">Index</Link>
-        <Link to="/about">About</Link>
+        <Link to={indexRoute.to}>Index</Link>
+        <Link to={aboutRoute.to}>About</Link>
+        <Link to={ticTacToeRoute.to}>Tic Tac Toe</Link>
       </div>
       <hr />
       <Outlet />
@@ -14,6 +18,10 @@ export const Route = createRootRoute({
     </>
   ),
   notFoundComponent: () => {
-    return <p>This page doesn't exist!</p>;
+    return (
+      <div>
+        <h1>This page doesn't exist!</h1>
+      </div>
+    );
   },
 });
